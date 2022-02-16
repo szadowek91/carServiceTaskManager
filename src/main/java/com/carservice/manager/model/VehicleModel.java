@@ -3,6 +3,7 @@ package com.carservice.manager.model;
 import lombok.*; // coś lombok mi nie działą mimo że jest dodany w pomie ?
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class VehicleModel {
 
@@ -12,10 +13,10 @@ public class VehicleModel {
     private String model;
     private String color;
     private int productionYear;
-    private LocalDate admissionDate;
+    private Date admissionDate;
 
 
-    public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, LocalDate admissionDate) {
+    public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate) {
         this.id = id;
         this.registrationNumber = registrationNumber;
         this.mark = mark;
@@ -25,7 +26,7 @@ public class VehicleModel {
         this.admissionDate = admissionDate;
     }
 
-    public VehicleModel(String registrationNumber, String mark, String model, String color, int productionYear, LocalDate admissionDate) {
+    public VehicleModel(String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate) {
         this.registrationNumber = registrationNumber;
         this.mark = mark;
         this.model = model;
@@ -86,11 +87,11 @@ public class VehicleModel {
         this.productionYear = productionYear;
     }
 
-    public LocalDate getAdmissionDate() {
+    public Date getAdmissionDate() {
         return admissionDate;
     }
 
-    public void setAdmissionDate(LocalDate admissionDate) {
+    public void setAdmissionDate(Date admissionDate) {
         this.admissionDate = admissionDate;
     }
 

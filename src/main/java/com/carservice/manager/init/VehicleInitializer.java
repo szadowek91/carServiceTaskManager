@@ -7,6 +7,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Component
 public class VehicleInitializer {
@@ -18,10 +19,10 @@ public class VehicleInitializer {
         this.vehicleRepository = vehicleRepository;
     }
 
-    @EventListener
-    public void appReady(ApplicationReadyEvent event){
-        vehicleRepository.addVehicle(new VehicleModel("ZK9090","Audi","A4","Blue",1999, LocalDate.of(2022,3,3)));
-    }
+//    @EventListener
+//    public void appReady(ApplicationReadyEvent event){
+//        vehicleRepository.addVehicle(new VehicleModel("ZK9090","Audi","A4","Blue",1999, new Date()));
+//    }
 
 
 

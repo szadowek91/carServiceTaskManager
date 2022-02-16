@@ -19,6 +19,12 @@
         <td><span th:text="${car.mark}"></span></td>
         <td><span th:text="${car.model}"></span></td>
         <td><span th:text="${car.registrationNumber}"></span></td>
+        <td> vehicle status </td>
+        <td>
+            <form th:action="@{/}" method="get">
+            <button type="submit">Repair</button>
+            </form>
+        </td>
     </tr>
     </tbody>
 </table>
