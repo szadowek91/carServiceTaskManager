@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:object="${car}" th:action="@{/add}" method="post" role="form">
+
+    <label for="mark">Mark</label>
+    <input type="text" id="mark" th:field="*{mark}">
+
+
+    <label for="model">Model</label>
+    <input type="text" id="model" th:field="*{model}">
+
+
+    <label for="registrationNumber">registrationNumber</label>
+    <input type="text" id="registrationNumber" th:field="*{registrationNumber}">
+
+    <button type="submit">Atak na Rosję!</button>
+
+
+
+</form>
+
+<form th:action="@{/}" method="get">
+    <button type="submit">strona głowna</button>
+</form>
+
+</body>
+</html>
