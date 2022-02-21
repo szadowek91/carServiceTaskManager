@@ -24,17 +24,22 @@ public class VehicleRepository {
 
 
     public void addVehicle(VehicleModel vehicleModel) {
-        saveDataToFile(vehicleModel);
+        List<VehicleModel> vehicleModels = readDataFromFile();
+        vehicleModels.add(vehicleModel);
+        saveJson(vehicleModels);
+
+    }
+
+    public void addAll(List<VehicleModel> vehicleModel) {
+        saveJson(vehicleModel);
     }
 
 
-    private void saveDataToFile(VehicleModel vehicleModel) {
+    private void saveJson(Object object){
         Gson gson = new Gson();
-        List<VehicleModel> vehicleModels = readDataFromFile();
-        vehicleModels.add(vehicleModel);
         try {
             try (FileWriter fw = new FileWriter("main.json")) {
-                gson.toJson(vehicleModels, fw);
+                gson.toJson(object, fw);
             }
         } catch (IOException e) {
             e.printStackTrace();

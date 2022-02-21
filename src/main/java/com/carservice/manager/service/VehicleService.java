@@ -25,10 +25,12 @@ public class VehicleService {
         vehicleRepository.addVehicle(vehicleModel);
     }
 
-
     public List<VehicleModel> getVehicleModels(){
         return vehicleRepository.getVehicleModels();
     }
+    public void addAllVehicles(List<VehicleModel> listVM){
+        vehicleRepository.addAll(listVM);
+        }
 
 
 }

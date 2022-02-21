@@ -19,9 +19,10 @@
         <td><span th:text="${car.mark}"></span></td>
         <td><span th:text="${car.model}"></span></td>
         <td><span th:text="${car.registrationNumber}"></span></td>
-        <td> vehicle status </td>
-        <td>
-            <form th:action="@{/}" method="get">
+        <td> is repaired: <span th:text="${car.status}"></span></td>
+        <td th:if="${car.status == false}">
+            <form th:action="@{/repair}" method="post">
+                <input name="id" hidden th:value="*{car.id}">
             <button type="submit">Repair</button>
             </form>
         </td>

@@ -1,7 +1,5 @@
 package com.carservice.manager.model;
 
-import lombok.*; // coś lombok mi nie działą mimo że jest dodany w pomie ?
-
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -14,9 +12,11 @@ public class VehicleModel {
     private String color;
     private int productionYear;
     private Date admissionDate;
+    private boolean status = false;
 
 
-    public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate) {
+
+    public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, boolean status) {
         this.id = id;
         this.registrationNumber = registrationNumber;
         this.mark = mark;
@@ -24,15 +24,17 @@ public class VehicleModel {
         this.color = color;
         this.productionYear = productionYear;
         this.admissionDate = admissionDate;
+        this.status = status;
     }
 
-    public VehicleModel(String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate) {
+    public VehicleModel(String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, boolean status) {
         this.registrationNumber = registrationNumber;
         this.mark = mark;
         this.model = model;
         this.color = color;
         this.productionYear = productionYear;
         this.admissionDate = admissionDate;
+        this.status = status;
     }
 
     public VehicleModel() {
@@ -95,6 +97,14 @@ public class VehicleModel {
         this.admissionDate = admissionDate;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "VehicleModel{" +
@@ -105,6 +115,7 @@ public class VehicleModel {
                 ", color='" + color + '\'' +
                 ", productionYear=" + productionYear +
                 ", admissionDate=" + admissionDate +
+                ", status=" + status +
                 '}';
     }
 }
