@@ -1,6 +1,5 @@
 package com.carservice.manager.model;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 public class VehicleModel {
@@ -13,7 +12,6 @@ public class VehicleModel {
     private int productionYear;
     private Date admissionDate;
     private boolean status = false;
-
 
 
     public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, boolean status) {

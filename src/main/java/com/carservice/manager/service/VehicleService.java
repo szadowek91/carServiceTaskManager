@@ -2,11 +2,7 @@ package com.carservice.manager.service;
 
 import com.carservice.manager.model.VehicleModel;
 import com.carservice.manager.repository.VehicleRepository;
-import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
-
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,12 +21,13 @@ public class VehicleService {
         vehicleRepository.addVehicle(vehicleModel);
     }
 
-    public List<VehicleModel> getVehicleModels(){
+    public List<VehicleModel> getVehicleModels() {
         return vehicleRepository.getVehicleModels();
     }
-    public void addAllVehicles(List<VehicleModel> listVM){
+
+    public void addAllVehicles(List<VehicleModel> listVM) {
         vehicleRepository.addAll(listVM);
-        }
+    }
 
 
 }

@@ -1,7 +1,5 @@
 package com.carservice.manager.model;
 
-
-
 import java.time.LocalDate;
 
 

@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.List;
 
 @Controller
@@ -31,19 +30,19 @@ public class VehicleController {
     }
 
     @GetMapping("/add")
-    public String addCar(Model model){
+    public String addCar(Model model) {
         model.addAttribute("car", new VehicleModel());
         return "add";
     }
 
     @PostMapping("/add")
-    public String addCar(VehicleModel vehicleModel){
+    public String addCar(VehicleModel vehicleModel) {
         vehicleService.addVehicle(vehicleModel);
         return "redirect:/cars";
     }
 
     @PostMapping("/repair")
-    public String repairCar(@RequestParam ("id") int id){
+    public String repairCar(@RequestParam("id") int id) {
         List<VehicleModel> vehicleModels = vehicleService.getVehicleModels();
         VehicleModel vehicleModel = vehicleModels.stream().filter(c -> c.getId() == id).findFirst().get();
         vehicleModel.setStatus(true);
