@@ -50,4 +50,10 @@ public class VehicleController {
         return "redirect:/cars";
     }
 
+    @GetMapping("/search")
+    public String findAllByInput (Model model, @RequestParam("text") String input){
+        model.addAttribute("cars", vehicleService.findAllByInput(input));
+        return "cars";
+    }
+
 }
