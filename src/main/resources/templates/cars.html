@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
 
-<table>
+<div class="row mb-1">
+    <div class="col-md-12" th:insert="~{fragments/NavBarCarService :: nav}"></div>
+</div>
+
+
+<table class="table table-striped">
     <thead>
     <tr>
         <th>Mark</th>
@@ -15,7 +25,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="car : ${cars}">
+    <tr th:each="car : ${cars}" class="center">
         <td><span th:text="${car.mark}"></span></td>
         <td><span th:text="${car.model}"></span></td>
         <td><span th:text="${car.registrationNumber}"></span></td>
@@ -23,15 +33,16 @@
         <td th:if="${car.status == false}">
             <form th:action="@{/repair}" method="post">
                 <input name="id" hidden th:value="*{car.id}">
-            <button type="submit">Repair</button>
+            <button type="submit" class="btn btn-success">Repair</button>
             </form>
         </td>
     </tr>
     </tbody>
 </table>
 
+
 <form th:action="@{/}" method="get">
-    <button type="submit">strona głowna</button>
+    <button type="submit" class="btn btn-primary">Main Site</button>
 </form>
 
 </body>

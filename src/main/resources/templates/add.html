@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
 
+<div class="row mb-1">
+    <div class="col-md-12" th:insert="~{fragments/NavBarCarService :: nav}"></div>
+</div>
+
 <form th:object="${car}" th:action="@{/add}" method="post" role="form">
 
-    <label for="mark">Mark</label>
+    <label for="mark">Mark: </label>
     <input type="text" id="mark" th:field="*{mark}">
 
 
-    <label for="model">Model</label>
+    <label for="model">Model: </label>
     <input type="text" id="model" th:field="*{model}">
 
 
-    <label for="registrationNumber">registrationNumber</label>
+    <label for="registrationNumber">Registration Number: </label>
     <input type="text" id="registrationNumber" th:field="*{registrationNumber}">
 
-    <button type="submit">Atak na Rosję!</button>
+    <button type="submit" class="btn btn-danger">+ Add +</button>
 
 
 
 </form>
 
 <form th:action="@{/}" method="get">
-    <button type="submit">strona głowna</button>
+    <button type="submit" class="btn btn-info">Main Site</button>
 </form>
 
 </body>
