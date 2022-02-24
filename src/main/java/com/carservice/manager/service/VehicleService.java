@@ -39,4 +39,12 @@ public class VehicleService {
                                 || i.getRegistrationNumber().toUpperCase().contains(input.toUpperCase()))
                 .collect(Collectors.toList());
     }
+
+    public List<VehicleModel> findCarsBeforeRepair(){
+        return vehicleRepository.getVehicleModels().stream().filter(VehicleModel -> !VehicleModel.isStatus()).collect(Collectors.toList());
+    }
+
+    public List<VehicleModel> findCarsAfterRepair() {
+        return vehicleRepository.getVehicleModels().stream().filter(VehicleModel::isStatus).collect(Collectors.toList());
+    }
 }

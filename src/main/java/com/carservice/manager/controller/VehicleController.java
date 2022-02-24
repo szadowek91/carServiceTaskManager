@@ -56,4 +56,16 @@ public class VehicleController {
         return "cars";
     }
 
+    @GetMapping("/beforeRepair")
+    public String findCarsBeforeRepair(Model model){
+        model.addAttribute("cars", vehicleService.findCarsBeforeRepair());
+        return "cars";
+    }
+
+    @GetMapping("/afterRepair")
+    public String findCarsAfterRepair(Model model){
+        model.addAttribute("cars", vehicleService.findCarsAfterRepair());
+        return "cars";
+    }
+
 }
