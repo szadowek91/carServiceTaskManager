@@ -4,7 +4,6 @@ import com.carservice.manager.model.VehicleModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.stereotype.Repository;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;

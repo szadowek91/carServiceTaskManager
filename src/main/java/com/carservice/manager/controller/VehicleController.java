@@ -4,13 +4,17 @@ import com.carservice.manager.model.VehicleModel;
 import com.carservice.manager.service.VehicleService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.validation.Valid;
 import java.util.List;
 
+
 @Controller
-public class VehicleController {
+public class VehicleController{
 
     private final VehicleService vehicleService;
 
@@ -30,13 +34,16 @@ public class VehicleController {
     }
 
     @GetMapping("/add")
-    public String addCar(Model model) {
-        model.addAttribute("car", new VehicleModel());
+    public String addCar(Model model, VehicleModel vehicleModel) {
+        model.addAttribute("vehicleModel", vehicleModel);
         return "add";
     }
 
     @PostMapping("/add")
-    public String addCar(VehicleModel vehicleModel) {
+    public String addCar(@Valid VehicleModel vehicleModel, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            return "add";
+        }
         vehicleService.addVehicle(vehicleModel);
         return "redirect:/cars";
     }
