@@ -1,14 +1,20 @@
 package com.carservice.manager.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class VehicleModel {
 
     private int id;
+    @Size(max = 10)
     private String registrationNumber;
     private String mark;
     private String model;
     private String color;
+    @Min(1850)
+    @Max(2022)
     private int productionYear;
     private Date admissionDate;
     private boolean status = false;
