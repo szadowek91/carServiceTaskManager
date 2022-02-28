@@ -11,7 +11,7 @@ public class VehicleModel {
     private int id;
 
     @NotNull
-    @Size(min = 2,max = 10)
+    @Size(min = 2, max = 10)
     private String registrationNumber;
 
     @NotEmpty
@@ -24,7 +24,6 @@ public class VehicleModel {
     private Date admissionDate;
     private Date repairDate;
     private boolean status = false;
-
 
 
     public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, Date repairDate, boolean status) {
@@ -127,5 +126,3 @@ public class VehicleModel {
     }
 
 }
-
-

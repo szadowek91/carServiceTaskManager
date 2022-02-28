@@ -7,7 +7,7 @@ public class DateUtils {
 
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-    public static String stringDate(Date date){
+    public static String stringDate(Date date) {
         return simpleDateFormat.format(date);
     }
 }

@@ -9,14 +9,12 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.validation.Valid;
-import java.util.List;
 import java.util.stream.Collectors;
 
 
 @Controller
-public class VehicleController{
+public class VehicleController {
 
     private final VehicleService vehicleService;
 
@@ -44,7 +42,7 @@ public class VehicleController{
 
     @PostMapping("/add")
     public String addCar(@Valid VehicleModel vehicleModel, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             System.err.println(bindingResult.getAllErrors().stream().map(ObjectError::toString).collect(Collectors.joining("\n")));
             return "add";
         }
@@ -60,21 +58,21 @@ public class VehicleController{
     }
 
     @GetMapping("/search")
-    public String findAllByInput (Model model, @RequestParam("text") String input){
+    public String findAllByInput(Model model, @RequestParam("text") String input) {
         model.addAttribute("cars", vehicleService.findAllByInput(input));
         model.addAttribute("time", false);
         return "cars";
     }
 
     @GetMapping("/beforeRepair")
-    public String findCarsBeforeRepair(Model model){
+    public String findCarsBeforeRepair(Model model) {
         model.addAttribute("cars", vehicleService.findCarsBeforeRepair());
         model.addAttribute("time", true);
         return "cars";
     }
 
     @GetMapping("/afterRepair")
-    public String findCarsAfterRepair(Model model){
+    public String findCarsAfterRepair(Model model) {
         model.addAttribute("cars", vehicleService.findCarsAfterRepair());
         model.addAttribute("time", false);
         return "cars";

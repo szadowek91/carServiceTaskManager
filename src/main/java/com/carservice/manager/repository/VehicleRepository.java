@@ -4,8 +4,6 @@ import com.carservice.manager.model.VehicleModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.stereotype.Repository;
-
-import javax.validation.constraints.Null;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
@@ -38,10 +36,10 @@ public class VehicleRepository {
     }
 
 
-    private void saveJson(Object object, String fileName ) {
+    private void saveJson(Object object, String fileName) {
         Gson gson = new Gson();
         try {
-            try (FileWriter fw = new FileWriter(fileName +".json")) {
+            try (FileWriter fw = new FileWriter(fileName + ".json")) {
                 gson.toJson(object, fw);
             }
         } catch (IOException e) {
@@ -51,7 +49,7 @@ public class VehicleRepository {
 
     private List<VehicleModel> readDataFromFile(String fileName) {
         Gson gson = new Gson();
-        try (Reader reader = Files.newBufferedReader(Paths.get(fileName +".json"))) {
+        try (Reader reader = Files.newBufferedReader(Paths.get(fileName + ".json"))) {
             Type vehicleType = new TypeToken<ArrayList<VehicleModel>>() {
             }.getType();
             List<VehicleModel> vehicleModels = gson.fromJson(reader, vehicleType);
@@ -61,6 +59,4 @@ public class VehicleRepository {
         }
         return new ArrayList<>();
     }
-
-
 }
