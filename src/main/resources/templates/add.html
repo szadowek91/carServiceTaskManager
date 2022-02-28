@@ -22,7 +22,7 @@
 
         <tr>
             <td for="mark">Mark:</td>
-            <td><input type="text" id="mark" th:field="*{mark}"></td>
+            <td><input type="text" minlength="1" id="mark" th:field="*{mark}"></td>
             <td th:if="${#fields.hasErrors('mark')}" th:errors="*{mark}"></td>
         </tr>
         <tr>
@@ -32,12 +32,12 @@
         </tr>
         <tr>
             <td for="registrationNumber">Registration Number:</td>
-            <td><input type="text" id="registrationNumber" th:field="*{registrationNumber}"></td>
+            <td><input type="text" id="registrationNumber" minlength="2" maxlength="10" th:field="*{registrationNumber}"></td>
             <td th:if="${#fields.hasErrors('registrationNumber')}" th:errors="*{registrationNumber}"></td>
         </tr>
         <tr>
             <td for="productionYear">Production Year (yyyy):</td>
-            <td><input type="text" id="productionYear" th:field="*{productionYear}"></td>
+            <td><input type="number" min="1850" max="2022" id="productionYear" th:field="*{productionYear}"></td>
             <td th:if="${#fields.hasErrors('productionYear')}" th:errors="*{productionYear}"></td>
         </tr>
         <tr>

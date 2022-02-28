@@ -25,6 +25,7 @@
         <th>Model</th>
         <th>RegistrationNumber</th>
         <th>Is repaired</th>
+        <th>Color</th>
         <th>Click to repair</th>
         <th th:if="${time == true}">Admission date</th>
     </tr>
@@ -35,6 +36,7 @@
         <td><span th:text="${car.model}"></span></td>
         <td><span th:text="${car.registrationNumber}"></span></td>
         <td><span th:text="${car.status}"></span></td>
+        <td><input type="color" id="color" th:value="${car.color}" disabled></td>
         <td>
             <div th:if="${car.status == false}">
                 <form th:action="@{/repair}" method="post">
