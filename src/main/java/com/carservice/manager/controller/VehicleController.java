@@ -31,7 +31,7 @@ public class VehicleController{
 
     @GetMapping("/cars")
     public String carsView(Model model) {
-        model.addAttribute("cars", vehicleService.getVehicleModels());
+        model.addAttribute("cars", vehicleService.getVehicleModels("main"));
         model.addAttribute("time", true);
         return "cars";
     }
@@ -48,7 +48,7 @@ public class VehicleController{
             System.err.println(bindingResult.getAllErrors().stream().map(ObjectError::toString).collect(Collectors.joining("\n")));
             return "add";
         }
-        vehicleService.addVehicle(vehicleModel);
+        vehicleService.addVehicle(vehicleModel, "main");
         return "redirect:/cars";
     }
 

@@ -21,27 +21,27 @@ public class VehicleRepository {
 
     private VehicleModel vehicleModel;
 
-    public List<VehicleModel> getVehicleModels() {
-        return readDataFromFile();
+    public List<VehicleModel> getVehicleModels(String fileName) {
+        return readDataFromFile(fileName);
     }
 
 
-    public void addVehicle(VehicleModel vehicleModel) {
-        List<VehicleModel> vehicleModels = readDataFromFile();
+    public void addVehicle(VehicleModel vehicleModel, String fileName) {
+        List<VehicleModel> vehicleModels = readDataFromFile(fileName);
         vehicleModels.add(vehicleModel);
-        saveJson(vehicleModels);
+        saveJson(vehicleModels, fileName);
 
     }
 
-    public void addAll(List<VehicleModel> vehicleModel) {
-        saveJson(vehicleModel);
+    public void addAll(List<VehicleModel> vehicleModel, String fileName) {
+        saveJson(vehicleModel, fileName);
     }
 
 
-    private void saveJson(Object object) {
+    private void saveJson(Object object, String fileName ) {
         Gson gson = new Gson();
         try {
-            try (FileWriter fw = new FileWriter("main.json")) {
+            try (FileWriter fw = new FileWriter(fileName +".json")) {
                 gson.toJson(object, fw);
             }
         } catch (IOException e) {
@@ -49,21 +49,18 @@ public class VehicleRepository {
         }
     }
 
-    private List<VehicleModel> readDataFromFile() {
+    private List<VehicleModel> readDataFromFile(String fileName) {
         Gson gson = new Gson();
-        try (Reader reader = Files.newBufferedReader(Paths.get("main.json"))) {
+        try (Reader reader = Files.newBufferedReader(Paths.get(fileName +".json"))) {
             Type vehicleType = new TypeToken<ArrayList<VehicleModel>>() {
             }.getType();
             List<VehicleModel> vehicleModels = gson.fromJson(reader, vehicleType);
             return vehicleModels == null ? new ArrayList<>() : vehicleModels;
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace(); // don't want to print, because it's expected error (when file doesn't exist)
         }
         return new ArrayList<>();
     }
 
 
-    public List<VehicleModel> findAll() {
-        return readDataFromFile();
-    }
 }
