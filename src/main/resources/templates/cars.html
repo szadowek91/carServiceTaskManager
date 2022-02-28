@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,6 +9,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/back.css}" rel="stylesheet"/>
 </head>
 <body>
 
@@ -16,8 +17,8 @@
     <div class="col-md-12" th:insert="~{fragments/NavBarCarService :: nav}"></div>
 </div>
 
-
-<table class="table table-striped">
+<div style="position:relative;">
+<table class="table table-dark" style="opacity: 80%;">
     <thead>
     <tr>
         <th>Mark</th>
@@ -49,11 +50,14 @@
     </tr>
     </tbody>
 </table>
-
+</div>
 
 <form th:action="@{/}" method="get">
     <button type="submit" class="btn btn-primary">Main Site</button>
 </form>
 
+
+
 </body>
+
 </html>
