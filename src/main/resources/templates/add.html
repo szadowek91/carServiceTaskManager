@@ -5,7 +5,8 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
@@ -19,25 +20,29 @@
     <table>
 
         <tr>
-    <td for="mark">Mark: </td>
-    <td><input type="text" id="mark" th:field="*{mark}"></td>
+            <td for="mark">Mark:</td>
+            <td><input type="text" id="mark" th:field="*{mark}"></td>
             <td th:if="${#fields.hasErrors('mark')}" th:errors="*{mark}"></td>
         </tr>
-<tr>
-    <td for="model">Model: </td>
-    <td><input type="text" id="model" th:field="*{model}"></td>
-    <td th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></td>
-</tr>
-<tr>
-    <td for="registrationNumber">Registration Number: </td>
-        <td><input type="text" id="registrationNumber" th:field="*{registrationNumber}"></td>
-        <td th:if="${#fields.hasErrors('registrationNumber')}" th:errors="*{registrationNumber}"></td>
-</tr>
+        <tr>
+            <td for="model">Model:</td>
+            <td><input type="text" id="model" th:field="*{model}"></td>
+            <td th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></td>
+        </tr>
+        <tr>
+            <td for="registrationNumber">Registration Number:</td>
+            <td><input type="text" id="registrationNumber" th:field="*{registrationNumber}"></td>
+            <td th:if="${#fields.hasErrors('registrationNumber')}" th:errors="*{registrationNumber}"></td>
+        </tr>
+        <tr>
+            <td for="productionYear">Production Year (yyyy):</td>
+            <td><input type="text" id="productionYear" th:field="*{productionYear}"></td>
+            <td th:if="${#fields.hasErrors('productionYear')}" th:errors="*{productionYear}"></td>
+        </tr>
     </table>
 
 
     <button type="submit" class="btn btn-danger">+ Add +</button>
-
 
 
 </form>

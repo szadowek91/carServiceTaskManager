@@ -1,8 +1,11 @@
 package com.carservice.manager.model;
 
+import lombok.ToString;
+
 import javax.validation.constraints.*;
 import java.util.Date;
 
+@ToString
 public class VehicleModel {
 
     private int id;
@@ -19,10 +22,12 @@ public class VehicleModel {
     @Max(2022)
     private int productionYear;
     private Date admissionDate;
+    private Date repairDate;
     private boolean status = false;
 
 
-    public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, boolean status) {
+
+    public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, Date repairDate, boolean status) {
         this.id = id;
         this.registrationNumber = registrationNumber;
         this.mark = mark;
@@ -30,16 +35,18 @@ public class VehicleModel {
         this.color = color;
         this.productionYear = productionYear;
         this.admissionDate = admissionDate;
+        this.repairDate = repairDate;
         this.status = status;
     }
 
-    public VehicleModel(String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, boolean status) {
+    public VehicleModel(String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, Date repairDate, boolean status) {
         this.registrationNumber = registrationNumber;
         this.mark = mark;
         this.model = model;
         this.color = color;
         this.productionYear = productionYear;
         this.admissionDate = admissionDate;
+        this.repairDate = repairDate;
         this.status = status;
     }
 
@@ -103,6 +110,14 @@ public class VehicleModel {
         this.admissionDate = admissionDate;
     }
 
+    public Date getRepairDate() {
+        return repairDate;
+    }
+
+    public void setRepairDate(Date repairDate) {
+        this.repairDate = repairDate;
+    }
+
     public boolean isStatus() {
         return status;
     }
@@ -111,19 +126,6 @@ public class VehicleModel {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "VehicleModel{" +
-                "id=" + id +
-                ", registrationNumber='" + registrationNumber + '\'' +
-                ", mark='" + mark + '\'' +
-                ", model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                ", productionYear=" + productionYear +
-                ", admissionDate=" + admissionDate +
-                ", status=" + status +
-                '}';
-    }
 }
 
 

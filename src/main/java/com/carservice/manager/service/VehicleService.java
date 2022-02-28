@@ -4,6 +4,7 @@ import com.carservice.manager.model.VehicleModel;
 import com.carservice.manager.repository.VehicleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -21,6 +22,7 @@ public class VehicleService {
 
     public void addVehicle(VehicleModel vehicleModel) {
         vehicleModel.setId(UUID.randomUUID().hashCode());
+        vehicleModel.setAdmissionDate(new Date());
         vehicleRepository.addVehicle(vehicleModel);
     }
 
@@ -47,5 +49,14 @@ public class VehicleService {
 
     public List<VehicleModel> findCarsAfterRepair() {
         return vehicleRepository.getVehicleModels().stream().filter(VehicleModel::isStatus).collect(Collectors.toList());
+    }
+
+
+    public void repair(int id) {
+        List<VehicleModel> vehicleModels = getVehicleModels();
+        VehicleModel vehicleModel = vehicleModels.stream().filter(c -> c.getId() == id).findFirst().get();
+        vehicleModel.setStatus(true);
+        vehicleModel.setRepairDate(new Date());
+        addAllVehicles(vehicleModels);
     }
 }
