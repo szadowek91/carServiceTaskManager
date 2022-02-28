@@ -42,7 +42,7 @@
         </tr>
         <tr>
             <td for="color">Select color :</td>
-            <td><input type="color" id="color" value="#0000ff"></td>
+            <td><input type="color" id="color" th:field="*{color}"></td>
             <td th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></td>
         </tr>
     </table>
