@@ -40,11 +40,18 @@
             <td><input type="text" id="productionYear" th:field="*{productionYear}"></td>
             <td th:if="${#fields.hasErrors('productionYear')}" th:errors="*{productionYear}"></td>
         </tr>
+        <tr>
+            <td for="color">Select color :</td>
+            <td><input type="color" id="color" value="#0000ff"></td>
+            <td th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></td>
+        </tr>
     </table>
 
-
-    <button type="submit" class="btn btn-danger">+ Add +</button>
-
+    <div class="container">
+        <div class="center">
+            <button type="submit" class="btn btn-danger">+ Add +</button>
+        </div>
+    </div>
 
 </form>
 
