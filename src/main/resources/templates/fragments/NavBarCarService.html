@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,7 +7,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Car Service Task Manager</a>
+    <a class="navbar-brand" href="/">Car Service Task Manager</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,6 +22,18 @@
                 <form th:action="@{/add}" method="get">
                     <button type="submit" class="btn btn-warning">Add new car</button>
                 </form>
+            </li>
+            <li class="nav-item active">
+                <form th:action="@{/beforeRepair}" method="get">
+                    <button type="submit" class="btn btn-danger">Cars waiting to be repaired</button>
+                </form>
+            </li>
+            <li class="nav-item active">
+                <form th:action="@{/afterRepair}" method="get">
+                    <button type="submit" class="btn btn-success">Cars repaired (done)</button>
+                </form>
+            </li>
+
 
 
         </ul>

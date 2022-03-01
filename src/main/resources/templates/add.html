@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/back.css}" rel="stylesheet"/>
 </head>
 <body>
 
@@ -15,27 +17,42 @@
     <div class="col-md-12" th:insert="~{fragments/NavBarCarService :: nav}"></div>
 </div>
 
-<form th:object="${car}" th:action="@{/add}" method="post" role="form">
+<form action="#" th:object="${vehicleModel}" th:action="@{/add}" method="post" role="form">
+    <table class="table table-dark" style="opacity: 85%;">
 
-    <label for="mark">Mark: </label>
-    <input type="text" id="mark" th:field="*{mark}">
+        <tr>
+            <td for="mark">Mark:</td>
+            <td><input type="text" minlength="1" id="mark" th:field="*{mark}"></td>
+            <td th:if="${#fields.hasErrors('mark')}" th:errors="*{mark}"></td>
+        </tr>
+        <tr>
+            <td for="model">Model:</td>
+            <td><input type="text" id="model" th:field="*{model}"></td>
+            <td th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></td>
+        </tr>
+        <tr>
+            <td for="registrationNumber">Registration Number:</td>
+            <td><input type="text" id="registrationNumber" minlength="2" maxlength="10" th:field="*{registrationNumber}"></td>
+            <td th:if="${#fields.hasErrors('registrationNumber')}" th:errors="*{registrationNumber}"></td>
+        </tr>
+        <tr>
+            <td for="productionYear">Production Year (yyyy):</td>
+            <td><input type="number" min="1850" max="2022" id="productionYear" th:field="*{productionYear}"></td>
+            <td th:if="${#fields.hasErrors('productionYear')}" th:errors="*{productionYear}"></td>
+        </tr>
+        <tr>
+            <td for="color">Select color :</td>
+            <td><input type="color" id="color" th:field="*{color}"></td>
+            <td th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></td>
+        </tr>
+    </table>
 
+    <div class="container">
+        <div class="center">
+            <button type="submit" class="btn btn-danger">+ Add +</button>
+        </div>
+    </div>
 
-    <label for="model">Model: </label>
-    <input type="text" id="model" th:field="*{model}">
-
-
-    <label for="registrationNumber">Registration Number: </label>
-    <input type="text" id="registrationNumber" th:field="*{registrationNumber}">
-
-    <button type="submit" class="btn btn-danger">+ Add +</button>
-
-
-
-</form>
-
-<form th:action="@{/}" method="get">
-    <button type="submit" class="btn btn-primary">Main Site</button>
 </form>
 
 </body>
