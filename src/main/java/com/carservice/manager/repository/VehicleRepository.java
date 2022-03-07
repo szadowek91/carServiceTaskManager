@@ -1,5 +1,6 @@
 package com.carservice.manager.repository;
 
+import com.carservice.manager.entity.VehicleEntity;
 import com.carservice.manager.model.VehicleModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -11,10 +12,11 @@ import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Repository
-public class VehicleRepository {
+public class VehicleRepository implements Dao<VehicleEntity> {
 
 
     private VehicleModel vehicleModel;
@@ -58,5 +60,33 @@ public class VehicleRepository {
 //            e.printStackTrace(); // don't want to print, because it's expected error (when file doesn't exist)
         }
         return new ArrayList<>();
+    }
+
+
+    // TODO change methods to implementing from interface & refactor class VehicleRepository
+
+    @Override
+    public VehicleEntity find(Long id) {
+        return null;
+    }
+
+    @Override
+    public Collection<VehicleEntity> findAll() {
+        return null;
+    }
+
+    @Override
+    public void save(VehicleEntity vehicleEntity) {
+
+    }
+
+    @Override
+    public VehicleEntity update(VehicleEntity vehicleEntity) {
+        return null;
+    }
+
+    @Override
+    public void delete(VehicleEntity vehicleEntity) {
+
     }
 }
