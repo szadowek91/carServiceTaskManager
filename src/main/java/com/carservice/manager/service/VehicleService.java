@@ -23,7 +23,7 @@ public class VehicleService {
 
 
     public void addVehicle(VehicleModel vehicleModel, String fileName) {
-        vehicleModel.setId(UUID.randomUUID().hashCode());
+        vehicleModel.setId(Long.valueOf(UUID.randomUUID().hashCode()));
         vehicleModel.setAdmissionDate(new Date());
         vehicleRepository.addVehicle(vehicleModel, fileName);
     }
