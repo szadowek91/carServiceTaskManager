@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
@@ -60,29 +62,50 @@ class VehicleServiceTest {
 
     @Test
     void addVehicle() {
+        //given
+        //when
+        //then
     }
 
     @Test
     void getVehicleModels() {
+        //given
+        //when
+        //then
     }
 
     @Test
     void addAllVehicles() {
+        //given
+        //when
+        //then
     }
 
     @Test
     void findAllByInput() {
+        //given
+        //when
+        //then
     }
 
     @Test
     void findCarsBeforeRepair() {
+        //given
+        //when
+        //then
     }
 
     @Test
     void findCarsAfterRepair() {
+        //given
+        //when
+        //then
     }
 
     @Test
     void repair() {
+        //given
+        //when
+        //then
     }
 }
