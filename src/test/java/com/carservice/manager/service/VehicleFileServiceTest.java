@@ -1,7 +1,7 @@
 package com.carservice.manager.service;
 
 import com.carservice.manager.model.VehicleModel;
-import com.carservice.manager.repository.VehicleRepository;
+import com.carservice.manager.repository.VehicleFileRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,15 +20,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class VehicleServiceTest {
+class VehicleFileServiceTest {
 
     private List<VehicleModel> listOfCars = new ArrayList<>();
 
     @InjectMocks
-    private VehicleService vehicleService;
+    private VehicleFileService vehicleFileService;
 
     @Mock
-    private VehicleRepository vehicleRepository;
+    private VehicleFileRepository vehicleFileRepository;
 
     int plusOneDay = +(1000*60*60*24);
     int minusOneDay = -(1000*60*60*24);

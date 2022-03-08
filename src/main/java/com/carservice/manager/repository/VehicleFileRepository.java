@@ -1,10 +1,11 @@
 package com.carservice.manager.repository;
 
-//import com.carservice.manager.entity.VehicleEntity;
+import com.carservice.manager.entity.VehicleEntity;
 import com.carservice.manager.model.VehicleModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.stereotype.Repository;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
@@ -16,7 +17,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Repository
-public class VehicleRepository /* implements Dao<VehicleEntity>*/ {
+public class VehicleFileRepository {
 
 
     private VehicleModel vehicleModel;
@@ -62,32 +63,3 @@ public class VehicleRepository /* implements Dao<VehicleEntity>*/ {
         return new ArrayList<>();
     }
 }
-
-//
-//    // TODO change methods to implementing from interface & refactor class VehicleRepository
-//
-//    @Override
-//    public VehicleEntity find(Long id) {
-//        return null;
-//    }
-//
-//    @Override
-//    public Collection<VehicleEntity> findAll() {
-//        return null;
-//    }
-//
-//    @Override
-//    public void save(VehicleEntity vehicleEntity) {
-//
-//    }
-//
-//    @Override
-//    public VehicleEntity update(VehicleEntity vehicleEntity) {
-//        return null;
-//    }
-//
-//    @Override
-//    public void delete(VehicleEntity vehicleEntity) {
-//
-//    }
-//}
