@@ -14,4 +14,20 @@ public class Log4J2YamlConfig {
         logger.error("This is an error message");
         logger.fatal("This is a fatal message");
     }
+
+    public void infoLogEnterIntoMethod(String methodName){
+        logger.info("Enter into " + methodName + " method.");
+    }
+
+    public void infoLogSuccess(){
+        logger.info("Method done successfully.");
+    }
+
+    public void errorLog(String errorName){
+        logger.error("something goes wrong ! : " + errorName);
+    }
+
+    public void fatalLog(String fatalErrorName){
+        logger.fatal(fatalErrorName + "  == FATAL ERROR, contact with support: 666-666-666");
+    }
 }

@@ -1,2 +1,32 @@
 [ERROR] 2022-03-09 09:53:32.776 {main} [Log4J2YamlConfig] - This is an error message
 [FATAL] 2022-03-09 09:53:32.776 {main} [Log4J2YamlConfig] - This is a fatal message
+[ERROR] 2022-03-09 10:43:02.113 {http-nio-8080-exec-1} [Log4J2YamlConfig] - something goes wrong !
+[ERROR] 2022-03-09 10:43:02.233 {http-nio-8080-exec-1} [Log4J2YamlConfig] - something goes wrong !
+[ERROR] 2022-03-09 10:47:37.681 {http-nio-8080-exec-1} [Log4J2YamlConfig] - something goes wrong !: entered carsView
+[ERROR] 2022-03-09 10:47:37.819 {http-nio-8080-exec-1} [Log4J2YamlConfig] - something goes wrong !: returning carsView
+[ERROR] 2022-03-09 11:22:57.903 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed contact with support: 666-666-666
+[ERROR] 2022-03-09 11:22:57.903 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed contact with support: 666-666-666
+[ERROR] 2022-03-09 11:22:57.906 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404 contact with support: 666-666-666
+[ERROR] 2022-03-09 11:22:57.906 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404 contact with support: 666-666-666
+[ERROR] 2022-03-09 11:23:49.385 {http-nio-8080-exec-6} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed contact with support: 666-666-666
+[ERROR] 2022-03-09 11:23:49.385 {http-nio-8080-exec-6} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404 contact with support: 666-666-666
+[ERROR] 2022-03-09 11:26:35.390 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:26:35.390 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:26:35.390 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:26:35.390 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:26:52.629 {http-nio-8080-exec-8} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:26:52.629 {http-nio-8080-exec-8} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:26:52.629 {http-nio-8080-exec-7} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:26:52.629 {http-nio-8080-exec-7} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:31:03.957 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:31:03.957 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:31:03.958 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:31:03.958 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:31:07.453 {http-nio-8080-exec-8} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:31:07.453 {http-nio-8080-exec-8} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:31:07.453 {http-nio-8080-exec-7} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:31:07.453 {http-nio-8080-exec-7} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:31:19.942 {http-nio-8080-exec-4} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:31:19.942 {http-nio-8080-exec-4} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 11:31:19.942 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Website can not be displayed
+[ERROR] 2022-03-09 11:31:19.942 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404

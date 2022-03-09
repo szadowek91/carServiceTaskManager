@@ -23,13 +23,13 @@ Configutation:
   Loggers:
 
     Root:
-      level: debug
+      level: info
       AppenderRef:
         - ref: Console_Appender
 
     Logger:
       - name: com.carservice.manager.config
-        level: debug
+        level: info
         AppenderRef:
           - ref: File_Appender
             level: error
