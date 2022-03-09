@@ -1,0 +1,7 @@
+body {
+  background: url(img/error-404.webp) no-repeat center center fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50%;
+  overflow: hidden;
+}

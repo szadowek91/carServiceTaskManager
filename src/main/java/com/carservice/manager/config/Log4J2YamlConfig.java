@@ -21,7 +21,7 @@ public class Log4J2YamlConfig {
     }
 
     public void infoLogSuccess(){
-        logger.info("Method done successfully.");
+        logger.info("Done successfully.");
     }
 
     public void errorLog(String errorName){

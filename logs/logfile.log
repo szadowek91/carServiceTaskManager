@@ -73,3 +73,7 @@
 [ERROR] 2022-03-09 12:48:24.219 {http-nio-8080-exec-3} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
 [ERROR] 2022-03-09 12:48:24.219 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : handleError // Website can not be displayed
 [ERROR] 2022-03-09 12:48:24.219 {http-nio-8080-exec-2} [Log4J2YamlConfig] - something goes wrong ! : Not Found 404
+[ERROR] 2022-03-09 13:44:51.225 {main} [Log4J2YamlConfig] - This is an error message
+[FATAL] 2022-03-09 13:44:51.225 {main} [Log4J2YamlConfig] - This is a fatal message
+[ERROR] 2022-03-09 13:53:58.101 {main} [Log4J2YamlConfig] - This is an error message
+[FATAL] 2022-03-09 13:53:58.101 {main} [Log4J2YamlConfig] - This is a fatal message
