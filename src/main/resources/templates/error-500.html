@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Error_Page</title>
+
+    <link th:href="@{/body500.css}" rel="stylesheet"/>
 </head>
 <body>
 
-<h1>Something went wrong! Error500</h1>
-<h2>Our Engineers are on it</h2>
-<a href="/">Go Home</a>
+<a href="/" type="button" class="btn btn-danger">BACK TO MAIN SITE</a>
+<!--<a href="/">BACK</a>-->
 
 </body>
 </html>
