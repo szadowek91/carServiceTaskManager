@@ -6,10 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.*;
 import java.util.Date;
-import org.hibernate.annotations.GenericGenerator;
 
 @Getter
 @Setter
@@ -31,31 +33,31 @@ public class VehicleEntity {
 
     @NotNull
     @Size(min = 2, max = 10)
-    @Column(name = COLUMN_PREFIX+"registration_number", nullable = false)
+    @Column(name = COLUMN_PREFIX + "registration_number", nullable = false)
     private String registrationNumber;
 
     @NotEmpty
-    @Column(name = COLUMN_PREFIX+"mark", nullable = false)
+    @Column(name = COLUMN_PREFIX + "mark", nullable = false)
     private String mark;
 
-    @Column(name = COLUMN_PREFIX+"model")
+    @Column(name = COLUMN_PREFIX + "model")
     private String model;
 
-    @Column(name = COLUMN_PREFIX+"color")
+    @Column(name = COLUMN_PREFIX + "color")
     private String color;
 
     @Min(1850)
     @Max(2022)
-    @Column(name = COLUMN_PREFIX+"prod_year")
+    @Column(name = COLUMN_PREFIX + "prod_year")
     private int productionYear;
 
-    @Column(name = COLUMN_PREFIX+"add_date")
+    @Column(name = COLUMN_PREFIX + "add_date")
     private Date admissionDate;
 
-    @Column(name = COLUMN_PREFIX+"rep_date")
+    @Column(name = COLUMN_PREFIX + "rep_date")
     private Date repairDate;
 
-    @Column(name = COLUMN_PREFIX+"is_repaired")
+    @Column(name = COLUMN_PREFIX + "is_repaired")
     private boolean status = false;
 
 

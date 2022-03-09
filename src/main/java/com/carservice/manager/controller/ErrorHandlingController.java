@@ -1,8 +1,6 @@
 package com.carservice.manager.controller;
 
 import com.carservice.manager.config.Log4J2YamlConfig;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

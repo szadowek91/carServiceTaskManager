@@ -10,7 +10,8 @@ import java.util.List;
 public interface VehicleDbRepository extends JpaRepository<VehicleEntity, Long> {
 
 
-    List<VehicleEntity> findAllByMarkContainingIgnoreCaseOrModelContainingIgnoreCaseOrRegistrationNumberContainingIgnoreCase (String mark, String model, String registrationNumber);
+    List<VehicleEntity> findAllByMarkContainingIgnoreCaseOrModelContainingIgnoreCaseOrRegistrationNumberContainingIgnoreCase(
+            String mark, String model, String registrationNumber);
 
     List<VehicleEntity> findAllByStatusEquals(boolean status);
 

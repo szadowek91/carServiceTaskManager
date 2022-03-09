@@ -4,7 +4,6 @@ import com.carservice.manager.config.Log4J2YamlConfig;
 import com.carservice.manager.entity.VehicleEntity;
 import com.carservice.manager.model.VehicleModel;
 import com.carservice.manager.repository.VehicleDbRepository;
-import com.carservice.manager.utils.DateUtils;
 import com.carservice.manager.utils.VehicleWrapper;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -12,14 +11,12 @@ import org.springframework.validation.annotation.Validated;
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Validated
 @Service
 public class VehicleDbService {
-    
+
     private final VehicleDbRepository vehicleDbRepository;
 
     public VehicleDbService(VehicleDbRepository vehicleDbRepository) {
@@ -63,14 +60,11 @@ public class VehicleDbService {
     }
 
     @Transactional
-    public void repair (Long id){
+    public void repair(Long id) {
         logger.infoLogEnterIntoMethod("repair/DbService");
         VehicleEntity vehicle = vehicleDbRepository.findById(id).get();
         vehicle.setStatus(true);
         vehicle.setRepairDate(new Date());
         logger.infoLogSuccess();
-//        vehicleDbRepository.save(vehicle);
-
     }
-
 }

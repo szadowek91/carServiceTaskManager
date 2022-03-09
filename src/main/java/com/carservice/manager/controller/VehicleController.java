@@ -3,9 +3,6 @@ package com.carservice.manager.controller;
 import com.carservice.manager.config.Log4J2YamlConfig;
 import com.carservice.manager.model.VehicleModel;
 import com.carservice.manager.service.VehicleDbService;
-import com.carservice.manager.service.VehicleFileService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +10,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.validation.Valid;
 import java.util.stream.Collectors;
 
@@ -20,8 +18,8 @@ import java.util.stream.Collectors;
 @Controller
 public class VehicleController {
 
-//    private final VehicleFileService vehicleFileService;
-private final VehicleDbService vehicleDbService;
+    //    private final VehicleFileService vehicleFileService;
+    private final VehicleDbService vehicleDbService;
 
     public VehicleController(VehicleDbService vehicleDbService) {
         this.vehicleDbService = vehicleDbService;
@@ -102,5 +100,4 @@ private final VehicleDbService vehicleDbService;
         logger.infoLogSuccess();
         return "cars";
     }
-
 }

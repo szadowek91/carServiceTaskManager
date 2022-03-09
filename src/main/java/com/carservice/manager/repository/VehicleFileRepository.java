@@ -1,7 +1,6 @@
 package com.carservice.manager.repository;
 
 import com.carservice.manager.config.Log4J2YamlConfig;
-import com.carservice.manager.entity.VehicleEntity;
 import com.carservice.manager.model.VehicleModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -14,7 +13,6 @@ import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Repository
