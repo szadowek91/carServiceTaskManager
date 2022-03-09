@@ -41,7 +41,7 @@ private final VehicleDbService vehicleDbService;
 
     @GetMapping("/cars")
     public String carsView(Model model) {
-        logger.infoLogEnterIntoMethod("carsView");
+        logger.infoLogEnterIntoMethod("carsView/VehicleCtrl");
         model.addAttribute("cars", vehicleDbService.getVehicleModels());
         model.addAttribute("time", true);
         logger.infoLogSuccess();
@@ -50,7 +50,7 @@ private final VehicleDbService vehicleDbService;
 
     @GetMapping("/add")
     public String addCar(Model model, VehicleModel vehicleModel) {
-        logger.infoLogEnterIntoMethod("addCar@GetMapping");
+        logger.infoLogEnterIntoMethod("addCar@GetMapping/VehicleCtrl");
         model.addAttribute("vehicleModel", vehicleModel);
         logger.infoLogSuccess();
         return "add";
@@ -58,7 +58,7 @@ private final VehicleDbService vehicleDbService;
 
     @PostMapping("/add")
     public String addCar(@Valid VehicleModel vehicleModel, BindingResult bindingResult) {
-        logger.infoLogEnterIntoMethod("addCar@PostMapping");
+        logger.infoLogEnterIntoMethod("addCar@PostMapping/VehicleCtrl");
         if (bindingResult.hasErrors()) {
             System.err.println(bindingResult.getAllErrors().stream().map(ObjectError::toString).collect(Collectors.joining("\n")));
             return "add";
@@ -70,7 +70,7 @@ private final VehicleDbService vehicleDbService;
 
     @PostMapping("/repair")
     public String repairCar(@RequestParam("id") Long id) {
-        logger.infoLogEnterIntoMethod("repairCar");
+        logger.infoLogEnterIntoMethod("repairCar/VehicleCtrl");
         vehicleDbService.repair(id);
         logger.infoLogSuccess();
         return "redirect:/cars";
@@ -78,7 +78,7 @@ private final VehicleDbService vehicleDbService;
 
     @GetMapping("/search")
     public String findAllByInput(Model model, @RequestParam("text") String input) {
-        logger.infoLogEnterIntoMethod("findAllByInput");
+        logger.infoLogEnterIntoMethod("findAllByInput/VehicleCtrl");
         model.addAttribute("cars", vehicleDbService.findAllByInput(input));
         model.addAttribute("time", false);
         logger.infoLogSuccess();
@@ -87,7 +87,7 @@ private final VehicleDbService vehicleDbService;
 
     @GetMapping("/beforeRepair")
     public String findCarsBeforeRepair(Model model) {
-        logger.infoLogEnterIntoMethod("findCarsBeforeRepair");
+        logger.infoLogEnterIntoMethod("findCarsBeforeRepair/VehicleCtrl");
         model.addAttribute("cars", vehicleDbService.findCarsBeforeRepair());
         model.addAttribute("time", true);
         logger.infoLogSuccess();
@@ -96,7 +96,7 @@ private final VehicleDbService vehicleDbService;
 
     @GetMapping("/afterRepair")
     public String findCarsAfterRepair(Model model) {
-        logger.infoLogEnterIntoMethod("findCarsAfterRepair");
+        logger.infoLogEnterIntoMethod("findCarsAfterRepair/VehicleCtrl");
         model.addAttribute("cars", vehicleDbService.findCarsAfterRepair());
         model.addAttribute("time", false);
         logger.infoLogSuccess();

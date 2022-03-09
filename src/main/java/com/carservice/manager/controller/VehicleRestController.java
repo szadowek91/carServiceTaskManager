@@ -23,14 +23,14 @@ public class VehicleRestController {
 
     @GetMapping("/search")
     public List<VehicleEntity> searchForVehicle(@PathParam("input") String input){
-        logger.infoLogEnterIntoMethod("searchForVehicle");
+        logger.infoLogEnterIntoMethod("searchForVehicle/VehicleRestCtrl");
         logger.infoLogSuccess();
         return vehicleDbService.findAllByInput(input);
     }
 
     @PostMapping()
     public VehicleEntity addVehicle(@RequestBody VehicleModel vehicleModel){
-        logger.infoLogEnterIntoMethod("addVehicle");
+        logger.infoLogEnterIntoMethod("addVehicle/VehicleRestCtrl");
         logger.infoLogSuccess();
         return vehicleDbService.addVehicle(vehicleModel);
     }
@@ -38,7 +38,7 @@ public class VehicleRestController {
 
     @GetMapping("/not-repaired")
     public List<VehicleEntity> searchForVehicleIsNotRepaired(){
-        logger.infoLogEnterIntoMethod("searchForVehicleIsNotRepaired");
+        logger.infoLogEnterIntoMethod("searchForVehicleIsNotRepaired/VehicleRestCtrl");
         logger.infoLogSuccess();
         return vehicleDbService.findCarsBeforeRepair();
     }
@@ -46,14 +46,14 @@ public class VehicleRestController {
 
     @GetMapping("/repaired")
     public List<VehicleEntity> searchForVehicleIsRepaired(){
-        logger.infoLogEnterIntoMethod("searchForVehicleIsRepaired");
+        logger.infoLogEnterIntoMethod("searchForVehicleIsRepaired/VehicleRestCtrl");
         logger.infoLogSuccess();
         return vehicleDbService.findCarsAfterRepair();
     }
 
     @PostMapping("/fix")
     public void fixVehicle (@PathParam("id") Long id){
-        logger.infoLogEnterIntoMethod("fixVehicle");
+        logger.infoLogEnterIntoMethod("fixVehicle/VehicleRestCtrl");
         logger.infoLogSuccess();
         vehicleDbService.repair(id);
     }

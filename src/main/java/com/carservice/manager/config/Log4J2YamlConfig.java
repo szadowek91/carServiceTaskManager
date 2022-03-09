@@ -2,6 +2,7 @@ package com.carservice.manager.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.cglib.core.ClassNameReader;
 
 public class Log4J2YamlConfig {
 

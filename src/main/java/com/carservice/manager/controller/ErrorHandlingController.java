@@ -18,22 +18,24 @@ public class ErrorHandlingController implements ErrorController {
 
     @RequestMapping("/error")
     public String handleError(HttpServletRequest request) {
-        logger.infoLogEnterIntoMethod("handleError");
+//        logger.infoLogEnterIntoMethod("handleError");
 
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-        logger.errorLog("Website can not be displayed");
+//        logger.errorLog("handleError // Website can not be displayed");
 
         if (status != null) {
             Integer statusCode = Integer.valueOf(status.toString());
 
             if (statusCode == HttpStatus.NOT_FOUND.value()) {
-                logger.errorLog("Not Found 404");
+//                logger.errorLog("Not Found 404");
                 return "error-404";
             } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-                logger.errorLog("Internal server 500");
+//                logger.errorLog("Internal server 500");
                 return "error-500";
             }
         }
         return "error";
     }
+
+    // loggers turned-off ; working site get error logs 404 ; TODO - find reason
 }
