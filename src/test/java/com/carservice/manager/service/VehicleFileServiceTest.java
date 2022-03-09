@@ -1,5 +1,6 @@
 package com.carservice.manager.service;
 
+import com.carservice.manager.config.Log4J2YamlConfig;
 import com.carservice.manager.model.VehicleModel;
 import com.carservice.manager.repository.VehicleFileRepository;
 import org.junit.jupiter.api.AfterEach;
@@ -108,4 +109,15 @@ class VehicleFileServiceTest {
         //when
         //then
     }
+
+
+    // =====================================OTHER TESTS ========================================== \\
+
+
+    @Test
+    public void testPerformSomeTask() throws Exception {
+        Log4J2YamlConfig log4J2YamlConf = new Log4J2YamlConfig();
+        log4J2YamlConf.performSomeTask();
+    }
+
 }

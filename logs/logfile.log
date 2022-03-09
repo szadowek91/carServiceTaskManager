@@ -1,0 +1,2 @@
+[ERROR] 2022-03-09 09:53:32.776 {main} [Log4J2YamlConfig] - This is an error message
+[FATAL] 2022-03-09 09:53:32.776 {main} [Log4J2YamlConfig] - This is a fatal message
