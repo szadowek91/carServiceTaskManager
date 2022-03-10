@@ -1,6 +1,7 @@
 package com.carservice.manager.service;
 
 import com.carservice.manager.model.VehicleModel;
+import com.carservice.manager.repository.VehicleDbRepository;
 import com.carservice.manager.repository.VehicleFileRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,10 +25,10 @@ class VehicleDbServiceTest {
     private List<VehicleModel> listOfCars = new ArrayList<>();
 
     @InjectMocks
-    private VehicleFileService vehicleFileService;
+    private VehicleDbService vehicleDbService;
 
     @Mock
-    private VehicleFileRepository vehicleFileRepository;
+    private VehicleDbRepository vehicleDbRepository;
 
     int plusOneDay = +(1000 * 60 * 60 * 24);
     int minusOneDay = -(1000 * 60 * 60 * 24);
