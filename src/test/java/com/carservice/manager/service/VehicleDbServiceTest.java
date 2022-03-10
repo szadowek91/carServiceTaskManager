@@ -18,7 +18,8 @@ import java.util.List;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class VehicleFileServiceTest {
+class VehicleDbServiceTest {
+
 
     private List<VehicleModel> listOfCars = new ArrayList<>();
 
@@ -54,7 +55,7 @@ class VehicleFileServiceTest {
     }
 
 
-    // =================================== FILE SERVICE TESTS ========================================== \\
+    // =================================== DB SERVICE TESTS ========================================== \\
 
 
     @Test
@@ -66,13 +67,6 @@ class VehicleFileServiceTest {
 
     @Test
     void getVehicleModels() {
-        //given
-        //when
-        //then
-    }
-
-    @Test
-    void addAllVehicles() {
         //given
         //when
         //then
