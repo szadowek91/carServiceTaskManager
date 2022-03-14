@@ -1,9 +1,11 @@
 package com.carservice.manager.repository;
 
+import com.carservice.manager.config.Log4J2YamlConfig;
 import com.carservice.manager.model.VehicleModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.stereotype.Repository;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class VehicleRepository {
+public class VehicleFileRepository {
 
 
     private VehicleModel vehicleModel;
@@ -23,11 +25,15 @@ public class VehicleRepository {
         return readDataFromFile(fileName);
     }
 
+    Log4J2YamlConfig logger = new Log4J2YamlConfig();
+
 
     public void addVehicle(VehicleModel vehicleModel, String fileName) {
+        logger.infoLogEnterIntoMethod("addVehicle/VehicleFileRepo");
         List<VehicleModel> vehicleModels = readDataFromFile(fileName);
         vehicleModels.add(vehicleModel);
         saveJson(vehicleModels, fileName);
+        logger.infoLogSuccess();
 
     }
 
@@ -37,26 +43,33 @@ public class VehicleRepository {
 
 
     private void saveJson(Object object, String fileName) {
+        logger.infoLogEnterIntoMethod("saveJson/VehicleFileRepo");
         Gson gson = new Gson();
         try {
             try (FileWriter fw = new FileWriter(fileName + ".json")) {
                 gson.toJson(object, fw);
+                logger.infoLogSuccess();
             }
         } catch (IOException e) {
             e.printStackTrace();
+            logger.errorLog("saveJson FAILED");
         }
+        logger.infoLogSuccess();
     }
 
     private List<VehicleModel> readDataFromFile(String fileName) {
+        logger.infoLogEnterIntoMethod("readDataFromFile/VehicleFileRepo");
         Gson gson = new Gson();
         try (Reader reader = Files.newBufferedReader(Paths.get(fileName + ".json"))) {
             Type vehicleType = new TypeToken<ArrayList<VehicleModel>>() {
             }.getType();
             List<VehicleModel> vehicleModels = gson.fromJson(reader, vehicleType);
+            logger.infoLogSuccess();
             return vehicleModels == null ? new ArrayList<>() : vehicleModels;
         } catch (IOException e) {
 //            e.printStackTrace(); // don't want to print, because it's expected error (when file doesn't exist)
         }
+        logger.infoLogSuccess();
         return new ArrayList<>();
     }
 }

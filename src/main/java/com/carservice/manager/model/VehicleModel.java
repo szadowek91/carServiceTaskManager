@@ -8,7 +8,7 @@ import java.util.Date;
 @ToString
 public class VehicleModel {
 
-    private int id;
+    private Long id;
 
     @NotNull
     @Size(min = 2, max = 10)
@@ -26,7 +26,7 @@ public class VehicleModel {
     private boolean status = false;
 
 
-    public VehicleModel(int id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, Date repairDate, boolean status) {
+    public VehicleModel(Long id, String registrationNumber, String mark, String model, String color, int productionYear, Date admissionDate, Date repairDate, boolean status) {
         this.id = id;
         this.registrationNumber = registrationNumber;
         this.mark = mark;
@@ -53,11 +53,11 @@ public class VehicleModel {
     }
 
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

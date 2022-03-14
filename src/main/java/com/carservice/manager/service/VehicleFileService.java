@@ -1,7 +1,8 @@
 package com.carservice.manager.service;
 
+import com.carservice.manager.config.Log4J2YamlConfig;
 import com.carservice.manager.model.VehicleModel;
-import com.carservice.manager.repository.VehicleRepository;
+import com.carservice.manager.repository.VehicleFileRepository;
 import com.carservice.manager.utils.DateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -13,31 +14,41 @@ import java.util.stream.Collectors;
 
 @Validated
 @Service
-public class VehicleService {
+public class VehicleFileService {
 
-    private VehicleRepository vehicleRepository;
+    private VehicleFileRepository vehicleFileRepository;
 
-    public VehicleService(VehicleRepository vehicleRepository) {
-        this.vehicleRepository = vehicleRepository;
+    public VehicleFileService(VehicleFileRepository vehicleFileRepository) {
+        this.vehicleFileRepository = vehicleFileRepository;
     }
+
+    Log4J2YamlConfig logger = new Log4J2YamlConfig();
 
 
     public void addVehicle(VehicleModel vehicleModel, String fileName) {
-        vehicleModel.setId(UUID.randomUUID().hashCode());
+        logger.infoLogEnterIntoMethod("addVehicle/FileService");
+        vehicleModel.setId(Long.valueOf(UUID.randomUUID().hashCode()));
         vehicleModel.setAdmissionDate(new Date());
-        vehicleRepository.addVehicle(vehicleModel, fileName);
+        vehicleFileRepository.addVehicle(vehicleModel, fileName);
+        logger.infoLogSuccess();
     }
 
     public List<VehicleModel> getVehicleModels(String fileName) {
-        return vehicleRepository.getVehicleModels(fileName);
+        logger.infoLogEnterIntoMethod("getVehicleModels/FileService");
+        logger.infoLogSuccess();
+        return vehicleFileRepository.getVehicleModels(fileName);
     }
 
     public void addAllVehicles(List<VehicleModel> listVM, String fileName) {
-        vehicleRepository.addAll(listVM, fileName);
+        logger.infoLogEnterIntoMethod("addAllVehicles/FileService");
+        vehicleFileRepository.addAll(listVM, fileName);
+        logger.infoLogSuccess();
     }
 
     public List<VehicleModel> findAllByInput(String input) {
-        return vehicleRepository.getVehicleModels("main").stream()
+        logger.infoLogEnterIntoMethod("findAllByInput/FileService");
+        logger.infoLogSuccess();
+        return vehicleFileRepository.getVehicleModels("main").stream()
                 .filter
                         (i -> i.getMark().toUpperCase().contains(input.toUpperCase())
                                 || i.getModel().toUpperCase().contains(input.toUpperCase())
@@ -46,15 +57,20 @@ public class VehicleService {
     }
 
     public List<VehicleModel> findCarsBeforeRepair() {
-        return vehicleRepository.getVehicleModels("main").stream().filter(VehicleModel -> !VehicleModel.isStatus()).collect(Collectors.toList());
+        logger.infoLogEnterIntoMethod("findCarsBeforeRepair/FileService");
+        logger.infoLogSuccess();
+        return vehicleFileRepository.getVehicleModels("main").stream().filter(VehicleModel -> !VehicleModel.isStatus()).collect(Collectors.toList());
     }
 
     public List<VehicleModel> findCarsAfterRepair() {
-        return vehicleRepository.getVehicleModels("main").stream().filter(VehicleModel::isStatus).collect(Collectors.toList());
+        logger.infoLogEnterIntoMethod("findCarsAfterRepair/FileService");
+        logger.infoLogSuccess();
+        return vehicleFileRepository.getVehicleModels("main").stream().filter(VehicleModel::isStatus).collect(Collectors.toList());
     }
 
 
     public void repair(int id) {
+        logger.infoLogEnterIntoMethod("repair/FileService");
         String fileNameForFixed = DateUtils.stringDate(new Date()) + "_fixed";
         List<VehicleModel> vehicleModels = getVehicleModels(fileNameForFixed);
         List<VehicleModel> vehicleModelsAll = getVehicleModels("main");
@@ -64,5 +80,6 @@ public class VehicleService {
         vehicleModels.add(vehicleModel);
         addAllVehicles(vehicleModels, fileNameForFixed);
         addAllVehicles(vehicleModelsAll, "main");
+        logger.infoLogSuccess();
     }
 }
